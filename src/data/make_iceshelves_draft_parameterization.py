@@ -12,11 +12,11 @@ from xarrayutils.utils import linear_trend, xr_linregress
 import gc
 
 # Define project repo path
-inDirName = '/Users/smurugan9/research/aislens/aislens_emulation/'
+inDirName = '/mainDirectory/'
 
 # Data file paths
-regriddedFluxSSH_filepath = 'data/interim/RegriddedFluxSSH.nc' # Data containing regridded flux and SSH for 150 years
-iceShelvesShape_filepath = 'data/interim/iceShelves.geojson' # File contains all defined ice shelves
+regriddedFluxSSH_filepath = 'data/RegriddedFluxSSH.nc' # Data containing regridded flux and SSH for 150 years
+iceShelvesShape_filepath = 'data/iceShelves.geojson' # File contains all defined ice shelves
 #figures_folderpath = 'reports/figures/' # Folder for output figures
 
 interim_data_folder = 'data/interim/'

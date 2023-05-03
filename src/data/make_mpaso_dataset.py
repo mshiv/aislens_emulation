@@ -4,20 +4,13 @@ import glob, os
 from parse import parse
 import datetime as dt
 
-##########################################################################################################################################
-##### DEFINE DIRECTORY AND FILE PATHS  ###################################################################################################
-##########################################################################################################################################
-
-
 # Directory containing E3SM_lowres_newrun .nc files
 # Files available on sermia. Copy these data files into this directory
-inDirName = '/storage/home/hcoda1/6/smurugan9/scratch/E3SM_lowres_newrun/'
-#inDirName = '/Users/smurugan9/research/aislens/aislens_emulation/data/raw/'
+inDirName = '/storage/mpasoE3SMdata/'
 
 # Directory to save output files. 
 # These files will contain the landIceFreshwaterFlux and SSH data variables from the original dataset without any regridding, i.e., it will remain an unstructured mesh output.
-outDirName = '/storage/home/hcoda1/6/smurugan9/data/E3SM_lowres_newrun_fluxSSH/'
-#outDirName = '/Users/smurugan9/research/aislens/aislens_emulation/data/processed/E3SM_lowres_newrun_FluxSSH/'
+outDirName = '/storage/'
 
 ##########################################################################################################################################
 
