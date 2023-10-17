@@ -58,8 +58,10 @@ Statistical Emulation of Antarctic Ice Sheet Melt Projections
 
 ## Requirements
 
+#### Dependencies:
+
+
 #### Data:
 
-<p><small>E3SM MPAS-O data output files: _mpaso.hist.am.timeSeriesStatsMonthly.{timeStamp}.nc_. These are available on the EAS.GATECH remote cluster:</small></p>
-
+<p><small>E3SM MPAS-O data output files: _mpaso.hist.am.timeSeriesStatsMonthly.{timeStamp}.nc_. These are made available on the remote cluster.</small></p>
 Analysis documentation to be provided as Sphinx docs.
