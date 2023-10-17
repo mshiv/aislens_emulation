@@ -62,15 +62,4 @@ Statistical Emulation of Antarctic Ice Sheet Melt Projections
 
 <p><small>E3SM MPAS-O data output files: _mpaso.hist.am.timeSeriesStatsMonthly.{timeStamp}.nc_. These are available on the EAS.GATECH remote cluster:</small></p>
 
-```
-ssh username@sermia.eas.gatech.edu
-```
-
-<p>Copy these onto the GATECH PACE cluster for further analyses and processing.
-Globus can be used for quick file transfers via the browser (this will require that each remote server is connected via <a target="_blank" href="https://docs.globus.org/how-to/globus-connect-personal-linux/">GlobusConnectPersonal</a>.</p>
-
-```
-ssh username@login-phoenix.pace.gatech.edu
-```
-
 Analysis documentation to be provided as Sphinx docs.
