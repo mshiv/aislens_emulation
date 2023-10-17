@@ -59,7 +59,7 @@ Statistical Emulation of Antarctic Ice Sheet Melt Projections
 ## Requirements
 
 #### Dependencies:
-
+Python environment dependencies/package list is provided in [_environment.yml_](https://github.com/mshiv/aislens_emulation/blob/main/environment.yml).
 
 #### Data:
 
