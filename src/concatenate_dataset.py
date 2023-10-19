@@ -17,4 +17,4 @@ for file in sorted(glob.glob(inDirName+sorrm_regridded_path+"Regridded_SORRMv2.1
 
 combined_ds = xr.concat(datasets,dim='Time')
 combined_ds.to_netcdf(inDirName+sorrm_regridded_path+'Regridded_SORRMv2.1.ISMF.FULL.nc')
-print("time coord assigned.")
+print("concatenation complete")
