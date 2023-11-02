@@ -25,7 +25,7 @@ parser.add_argument("-c", dest="colormaps", default=None,
                           , no spaces). This overrides default colormaps.")
 
 args = parser.parse_args()
-# runs = args.runs.split(',') # split run directories into list
+runs = str(args.runs) #.split(',') # split run directories into list
 variables = args.variables.split(',')
 timeLevs = args.timeLevels.split(',')  # split time levels into list
 # convert timeLevs to list of ints
