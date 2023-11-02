@@ -77,7 +77,7 @@ varPlot = {}
 figs = {}
 gs = {}
 
-for ii, run in enumerate(glob.glob(runs+"output_flux_all_timesteps_*.nc")):
+for ii, run in enumerate(sorted(glob.glob(runs+"output_flux_all_timesteps_*.nc"))):
     (path, inFileName) = os.path.split(run)
     f = Dataset(run, 'r')
     if 'daysSinceStart' in f.variables.keys():
