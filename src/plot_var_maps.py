@@ -225,6 +225,7 @@ for ii, run in enumerate(glob.glob(runs+"*.nc")):
 
     figs[run].tight_layout()
     figs[run].savefig(f'{runs}_{variables[0]}_{ii+2000}.png', dpi=400, bbox_inches='tight')
+    print("saved fig for {}".format(ii+2000))
     f.close()
 
 plt.show()
