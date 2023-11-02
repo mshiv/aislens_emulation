@@ -311,7 +311,7 @@ for ii, run in enumerate(runs):
 
     figs[run].tight_layout()
     if args.saveNames is not None:
-        figs[run].savefig(saveNames[ii], dpi=400, bbox_inches='tight')
+        figs[run].savefig(f'{saveNames[ii]}_{ii+2000}', dpi=400, bbox_inches='tight')
     
     f.close()
 
