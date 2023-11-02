@@ -224,7 +224,7 @@ for ii, run in enumerate(glob.glob(runs+"*.nc")):
                  label=f'{colorbar_label_prefix}{variable} (${units}$)'))
 
     figs[run].tight_layout()
-    figs[run].savefig(f'{inFileName}_{variables}_{ii+2000}', dpi=400, bbox_inches='tight')
+    figs[run].savefig(f'{runs}_{variables[ii]}_{ii+2000}.png', dpi=400, bbox_inches='tight')
     f.close()
 
 plt.show()
