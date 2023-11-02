@@ -77,7 +77,7 @@ varPlot = {}
 figs = {}
 gs = {}
 
-for ii, run in enumerate(glob.glob(runs+"*.nc")):
+for ii, run in enumerate(glob.glob(runs+"output_flux_all_timesteps_*.nc")):
     (path, inFileName) = os.path.split(run)
     f = Dataset(run, 'r')
     if 'daysSinceStart' in f.variables.keys():
@@ -224,7 +224,7 @@ for ii, run in enumerate(glob.glob(runs+"*.nc")):
                  label=f'{colorbar_label_prefix}{variable} (${units}$)'))
 
     figs[run].tight_layout()
-    figs[run].savefig(f'{runs}_{variables[0]}_{ii+2000}.png', dpi=400, bbox_inches='tight')
+    figs[run].savefig(f'{runs}{variables[0]}_{ii+2000}.png', dpi=400, bbox_inches='tight')
     print("saved fig for {}".format(ii+2000))
     f.close()
 
