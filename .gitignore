@@ -78,6 +78,9 @@ target/
 # exclude data from source control by default
 /data/
 
+# exclude temporary/interim figures from source control
+/reports/tmp-figures/
+
 # Mac OS-specific storage files
 .DS_Store
 
