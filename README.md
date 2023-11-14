@@ -38,15 +38,13 @@ Statistical Emulation of Antarctic Ice Sheet Melt Projections
 --------
 # Workflow Description
 
-A processed version of the data used in this workflow is made available as part of the [supplementary files](https://zenodo.org/doi/10.5281/zenodo.7633996) published with [[1]](#1).
-
 ## Requirements
-
 #### Dependencies:
 Python environment dependencies/package list is provided in [_environment.yml_](https://github.com/mshiv/aislens_emulation/blob/main/environment.yml).
 
 #### Data:
 
+A processed version of the data used in this workflow is made available as part of the [supplementary files](https://zenodo.org/doi/10.5281/zenodo.7633996) published with [[1]](#1).
 <p><small>E3SM MPAS-O data output files: _mpaso.hist.am.timeSeriesStatsMonthly.{timeStamp}.nc_. These are made available on the remote cluster.</small></p>
 
 
