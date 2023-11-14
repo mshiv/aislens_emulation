@@ -1,6 +1,8 @@
 AISLENS Emulation
 ==============================
 
+This project includes code/workflows for a statistical generator of spatiotemporal variability in forcings for ice sheet models. The generator, as applied to ocean model simulation output used to force an ice sheet model, has been described in detail in [[1]](#1).
+
 Statistical Emulation of Antarctic Ice Sheet Melt Projections
 
 # Project Organization
@@ -65,3 +67,8 @@ Python environment dependencies/package list is provided in [_environment.yml_](
 
 <p><small>E3SM MPAS-O data output files: _mpaso.hist.am.timeSeriesStatsMonthly.{timeStamp}.nc_. These are made available on the remote cluster.</small></p>
 Analysis documentation to be provided as Sphinx docs.
+
+## References
+<a id="1">[1]</a>
+S. Muruganandham, A. A. Robel, M. J. Hoffman and S. F. Price, "Statistical Generation of Ocean Forcing With Spatiotemporal Variability for Ice Sheet Models," in Computing in Science & Engineering, vol. 25, no. 3, pp. 30-41, May-June 2023, doi: 10.1109/MCSE.2023.3300908.
+
