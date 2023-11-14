@@ -70,5 +70,5 @@ Analysis documentation to be provided as Sphinx docs.
 
 ## References
 <a id="1">[1]</a>
-S. Muruganandham, A. A. Robel, M. J. Hoffman and S. F. Price, "Statistical Generation of Ocean Forcing With Spatiotemporal Variability for Ice Sheet Models," in Computing in Science & Engineering, vol. 25, no. 3, pp. 30-41, May-June 2023, doi: 10.1109/MCSE.2023.3300908.
+S. Muruganandham, A. A. Robel, M. J. Hoffman and S. F. Price, "[Statistical Generation of Ocean Forcing With Spatiotemporal Variability for Ice Sheet Models](https://ieeexplore.ieee.org/document/10201387)," in Computing in Science & Engineering, vol. 25, no. 3, pp. 30-41, May-June 2023, doi: 10.1109/MCSE.2023.3300908.
 
