@@ -105,8 +105,7 @@ for file in sorted(glob.glob(inDirName+"SORRMv2.1.ISMF.*.nc")):
    #os.remove(inFileName)
 print("Writing output complete.")
 
-# TODO: 
-# Concatenate DataArrays along "Time" dimension.
+# TODO - Concatenate DataArrays along "Time" dimension.
 # Possible Solutions:
 # xarray.open_mfdataset("infilename", concat_dims="Time")
 
