@@ -49,5 +49,3 @@ fluxsolver = Eof(flux_clean) # using eof.xarray interface
 # Define EOFs and PCs
 fluxeofs = fluxsolver.eofs()
 fluxpcs = fluxsolver.pcs()
-
-def randomize_phase(n_realization):
