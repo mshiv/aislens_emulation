@@ -37,20 +37,22 @@ MELTDRAFT_OBS = xr.open_dataset(main_dir / DIR_basalMeltObs / FILE_MeltDraftObs)
 # SORRMv21 = xr.open_dataset(main_dir / DIR_SORRMv21 / FILE_SORRMv21)
 
 data = MELTDRAFT_OBS
+ds = data.melt
+# ds = data.timeMonthly_avg_landIceFreshwaterFlux
 
-np_flux_array = np.empty(data.timeMonthly_avg_landIceFreshwaterFlux[0].shape)
+np_flux_array = np.empty(ds[0].shape)
 np_flux_array[:] = np.nan
 
-iceshelves_rgrs_array = xr.DataArray(np_flux_array, coords=data.timeMonthly_avg_landIceFreshwaterFlux[0].coords, dims = data.timeMonthly_avg_landIceFreshwaterFlux[0].dims, attrs=data.timeMonthly_avg_landIceFreshwaterFlux.attrs)
+iceshelves_rgrs_array = xr.DataArray(np_flux_array, coords=ds[0].coords, dims = ds[0].dims, attrs=ds.attrs)
 #iceshelves_rgrs = xr.Dataset(data_vars=dict(timeMonthly_avg_landIceFreshwaterFlux=(iceshelves_rgrs_array)), coords=data.coords, attrs=data.timeMonthly_avg_landIceFreshwaterFlux.attrs)
-iceshelves_rgrs = xr.Dataset(data_vars=dict(timeMonthly_avg_landIceFreshwaterFlux=(iceshelves_rgrs_array)))
+iceshelves_rgrs = xr.Dataset(data_vars=dict(melt=(iceshelves_rgrs_array)))
 
 IMBIEregions = range(6,33)
 iceShelfRegions = range(33,133)
 
 for i in iceShelfRegions:
     iceshelves_rgrs_catchment = xr.open_dataset(main_dir / DIR_basalMeltObs_Interim /'{}_rgrs.nc'.format(icems.name.values[i]))
-    iceshelves_rgrs_catchment['timeMonthly_avg_landIceFreshwaterFlux'] = iceshelves_rgrs_catchment['__xarray_dataarray_variable__']
+    iceshelves_rgrs_catchment['melt'] = iceshelves_rgrs_catchment['__xarray_dataarray_variable__']
     iceshelves_rgrs_catchment = iceshelves_rgrs_catchment.drop(['__xarray_dataarray_variable__'])
     iceshelves_rgrs = xr.merge([iceshelves_rgrs, iceshelves_rgrs_catchment], compat='no_conflicts')
 
