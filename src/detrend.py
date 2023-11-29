@@ -20,8 +20,12 @@ DIR_interim = 'data/interim/'
 DIR_SORRMv21 = 'data/external/SORRMv2.1.ISMF/regridded_output/'
 FILE_SORRMv21 = 'Regridded_SORRMv2.1.ISMF.FULL.nc'
 
+<<<<<<< HEAD
 # ds = xr.open_dataset(main_dir / DIR_SORRMv21 / FILE_SORRMv21, chunks={"Time":36})
 ds = xr.open_dataset(main_dir / DIR_SORRMv21 / FILE_SORRMv21)
+=======
+ds = xr.open_dataset(main_dir / DIR_SORRMv21 / FILE_SORRMv21, chunks={"Time":36})
+>>>>>>> 02aa0154326cbf5d5d07eef857bd7838cec6cb9c
 flux = ds.timeMonthly_avg_landIceFreshwaterFlux
 
 flux_detrend = detrend_dim(flux,"Time",1)
