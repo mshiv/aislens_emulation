@@ -40,7 +40,7 @@ DIR_SORRMv21_Interim = 'data/interim/SORRMv2.1.ISMF/iceShelves_dedraft/iceShelfR
 MELTDRAFT_OBS = xr.open_dataset(main_dir / DIR_basalMeltObs / FILE_MeltDraftObs)
 # SORRMv21 = xr.open_dataset(main_dir / DIR_SORRMv21 / FILE_SORRMv21)
 
-ICESHELVES_MASK = gpd.read_file(inDirName+DIR_external+FILE_iceShelvesShape)
+ICESHELVES_MASK = gpd.read_file(main_dir / DIR_external / FILE_iceShelvesShape)
 icems = ICESHELVES_MASK.to_crs({'init': 'epsg:3031'});
 crs = ccrs.SouthPolarStereo();
 
