@@ -1,5 +1,7 @@
 # Dedraft both datasets (observations and model output)
 # Refer dedraft
+# TODO : Refactor to take input/output filepaths and type of regions as cli arguments
+# TODO : Add Dask chunking for i/o when large files
 
 import sys
 import os
@@ -32,8 +34,8 @@ FILE_SORRMv21 = 'Regridded_SORRMv2.1.ISMF.FULL.nc'
 FILE_iceShelvesShape = 'iceShelves.geojson'
 
 # INTERIM GENERATED FILEPATHS
-DIR_basalMeltObs_Interim = 'data/interim/Paolo2023/iceShelves_dedraft/'
-DIR_SORRMv21_Interim = 'data/interim/SORRMv2.1.ISMF/iceShelves_dedraft/'
+DIR_basalMeltObs_Interim = 'data/interim/Paolo2023/iceShelves_dedraft/iceShelfRegions/'
+DIR_SORRMv21_Interim = 'data/interim/SORRMv2.1.ISMF/iceShelves_dedraft/iceShelfRegions/'
 
 MELTDRAFT_OBS = xr.open_dataset(main_dir / DIR_basalMeltObs / FILE_MeltDraftObs)
 # SORRMv21 = xr.open_dataset(main_dir / DIR_SORRMv21 / FILE_SORRMv21)
