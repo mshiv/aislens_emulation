@@ -39,8 +39,8 @@ DIR_basalMeltObs_Interim = 'data/interim/Paolo2023/iceShelves_dedraft/iceShelfRe
 DIR_SORRMv21_Interim = 'data/interim/SORRMv2.1.ISMF/iceShelves_dedraft/iceShelfRegions/'
 
 # MELTDRAFT_OBS = xr.open_dataset(main_dir / DIR_basalMeltObs / FILE_MeltDraftObs)
-SORRMv21 = xr.open_dataset(main_dir / DIR_SORRMv21 / FILE_SORRMv21)
-SORRMv21_DETRENDED = xr.open_dataset(main_dir / DIR_SORRMv21 / FILE_SORRMv21_DETRENDED)
+SORRMv21 = xr.open_dataset(main_dir / DIR_SORRMv21 / FILE_SORRMv21, chunks={'Time':1200})
+SORRMv21_DETRENDED = xr.open_dataset(main_dir / DIR_SORRMv21 / FILE_SORRMv21_DETRENDED, chunks={'Time':1200})
 
 ICESHELVES_MASK = gpd.read_file(main_dir / DIR_external / FILE_iceShelvesShape)
 icems = ICESHELVES_MASK.to_crs({'init': 'epsg:3031'});
