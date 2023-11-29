@@ -17,7 +17,7 @@ FILE_SORRMv21 = 'Regridded_SORRMv2.1.ISMF.FULL.nc'
 FILE_SORRMv21_DETRENDED = 'SORRMv21_detrended.nc'
 
 ds = xr.open_dataset(main_dir / DIR_SORRMv21 / FILE_SORRMv21_DETRENDED)
-flux = ds.__xarray_data_variable__
+flux = ds.__xarray_dataarray_variable__
 
 flux_ts = flux.sum(["x","y"])
 
