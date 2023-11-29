@@ -5,6 +5,9 @@ import dask
 import matplotlib.pyplot as plt
 
 
+# TODO : Dask implementation of the detrend function
+# Refer: https://ncar.github.io/esds/posts/2022/dask-debug-detrend/
+
 def detrend_dim(data, dim, deg):
     # detrend along a single dimension
     p = data.polyfit(dim=dim, deg=deg)
