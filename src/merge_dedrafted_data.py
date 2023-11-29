@@ -36,6 +36,10 @@ FILE_iceShelvesShape = 'iceShelves.geojson'
 MELTDRAFT_OBS = xr.open_dataset(main_dir / DIR_basalMeltObs / FILE_MeltDraftObs)
 # SORRMv21 = xr.open_dataset(main_dir / DIR_SORRMv21 / FILE_SORRMv21)
 
+ICESHELVES_MASK = gpd.read_file(main_dir / DIR_external / FILE_iceShelvesShape)
+icems = ICESHELVES_MASK.to_crs({'init': 'epsg:3031'});
+crs = ccrs.SouthPolarStereo();
+
 data = MELTDRAFT_OBS
 ds = data.melt
 # ds = data.timeMonthly_avg_landIceFreshwaterFlux
