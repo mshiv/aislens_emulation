@@ -51,8 +51,8 @@ print("sorrm data vars:")
 print(sorrmv21_draft_param.data_vars)
 
 
-obs23_clean = MELTDRAFT_OBS.melt - obs23_draft_param.timeMonthly_avg_landIceFreshwaterFlux
-sorrmv21_clean = SORRMv21_DETRENDED.timeMonthly_avg_landIceFreshwaterFlux - sorrmv21_draft_param.timeMonthly_avg_landIceFreshwaterFlux
+obs23_clean = MELTDRAFT_OBS.melt - obs23_draft_param.melt
+sorrmv21_clean = SORRMv21_DETRENDED.timeMonthly_avg_landIceFreshwaterFlux - sorrmv21_draft_param.melt
 
 obs23_clean.to_netcdf(main_dir / DIR_basalMeltObs_Interim / "obs23_clean.nc")
 sorrmv21_clean.to_netcdf(main_dir / DIR_SORRMv21_Interim / "sorrmv21_clean.nc")
