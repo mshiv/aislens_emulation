@@ -33,16 +33,17 @@ FILE_SORRMv21 = 'Regridded_SORRMv2.1.ISMF.FULL.nc'
 FILE_SORRMv21_DETRENDED = 'SORRMv21_detrended.nc'
 FILE_iceShelvesShape = 'iceShelves.geojson'
 
-MELTDRAFT_OBS = xr.open_dataset(main_dir / DIR_basalMeltObs / FILE_MeltDraftObs)
-# SORRMv21 = xr.open_dataset(main_dir / DIR_SORRMv21 / FILE_SORRMv21)
+# MELTDRAFT_OBS = xr.open_dataset(main_dir / DIR_basalMeltObs / FILE_MeltDraftObs)
+SORRMv21 = xr.open_dataset(main_dir / DIR_SORRMv21 / FILE_SORRMv21)
 
 ICESHELVES_MASK = gpd.read_file(main_dir / DIR_external / FILE_iceShelvesShape)
 icems = ICESHELVES_MASK.to_crs({'init': 'epsg:3031'});
 crs = ccrs.SouthPolarStereo();
 
-data = MELTDRAFT_OBS
-ds = data.melt
-# ds = data.timeMonthly_avg_landIceFreshwaterFlux
+# data = MELTDRAFT_OBS
+data = SORRMv21
+# ds = data.melt
+ds = data.timeMonthly_avg_landIceFreshwaterFlux
 
 np_flux_array = np.empty(ds[0].shape)
 np_flux_array[:] = np.nan
@@ -55,9 +56,9 @@ IMBIEregions = range(6,33)
 iceShelfRegions = range(33,133)
 
 for i in iceShelfRegions:
-    iceshelves_rgrs_catchment = xr.open_dataset(main_dir / DIR_basalMeltObs_Interim /'{}_rgrs.nc'.format(icems.name.values[i]))
+    iceshelves_rgrs_catchment = xr.open_dataset(main_dir / DIR_SORRMv21_Interim /'{}_rgrs.nc'.format(icems.name.values[i]))
     iceshelves_rgrs_catchment['melt'] = iceshelves_rgrs_catchment['__xarray_dataarray_variable__']
     iceshelves_rgrs_catchment = iceshelves_rgrs_catchment.drop(['__xarray_dataarray_variable__'])
     iceshelves_rgrs = xr.merge([iceshelves_rgrs, iceshelves_rgrs_catchment], compat='no_conflicts')
 
-iceshelves_rgrs.to_netcdf(main_dir / DIR_basalMeltObs_Interim / "iceshelves_draft_dependence_parameters_total.nc")
+iceshelves_rgrs.to_netcdf(main_dir / DIR_SORRMv21_Interim / "iceshelves_draft_dependence_parameters_total.nc")
