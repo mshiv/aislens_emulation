@@ -45,6 +45,11 @@ crs = ccrs.SouthPolarStereo();
 obs23_draft_param = xr.open_dataset(main_dir / DIR_basalMeltObs_Interim / "iceshelves_draft_dependence_parameters_total.nc")
 sorrmv21_draft_param = xr.open_dataset(main_dir / DIR_SORRMv21_Interim / "iceshelves_draft_dependence_parameters_total.nc")
 
+print("obs data vars:")
+print(obs23_draft_param.data_vars)
+print("sorrm data vars:")
+print(sorrmv21_draft_param.data_vars)
+
 
 obs23_clean = MELTDRAFT_OBS.melt - obs23_draft_param.timeMonthly_avg_landIceFreshwaterFlux
 sorrmv21_clean = SORRMv21_DETRENDED.timeMonthly_avg_landIceFreshwaterFlux - sorrmv21_draft_param.timeMonthly_avg_landIceFreshwaterFlux
