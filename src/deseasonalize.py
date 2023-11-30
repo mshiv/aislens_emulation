@@ -22,7 +22,7 @@ DIR_SORRMv21_Interim = 'data/interim/SORRMv2.1.ISMF/iceShelves_dedraft/iceShelfR
 
 
 ds = xr.open_dataset(main_dir / DIR_basalMeltObs_Interim / FILE_OBS23_CLEAN)
-flux = ds.__xarray_dataarray_variable__
+flux = ds.melt
 
 # Deseasonalize
 # Remove climatologies to isolate anomalies / deseasonalize 
