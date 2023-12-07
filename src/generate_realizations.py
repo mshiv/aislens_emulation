@@ -98,10 +98,38 @@ nmodes = norm_eofs.mode.shape[0]
 ## Standard EOF/PCA implementation
 # Can use the xeofs-rand package, or directly generate using sklearn PCA.
 
+##############################
+# FOURIER PHASE RANDOMIZATION 
+##############################
+
+# Define number of random Fourier realizations
+n_realizations = 2
+t_length = norm_pcs.shape[0]
+
+# Define random number generator 
+#rng = np.random.default_rng(2021)
+#random_phases = np.exp(np.random.default_rng(2023).uniform(0,2*np.pi,int(len(fl)/2+1))*1.0j) in line 26
+
+# xeofs_pcs[:,i] when using PCA outputs
+new_fl = np.empty((n_realizations,norm_pcs.shape[0],norm_pcs.shape[1]))
+
+# Time limits for plotting
+t1 = 0
+tf = int(t_length/2)
+
+for i in range(n_realizations):
+    for m in range(nmodes):
+        fl = norm_pcs[:,m] # fluxpcs[:,i] when using PCA outputs
+        fl_fourier = np.fft.rfft(fl)
+        random_phases = np.exp(np.random.uniform(0,2*np.pi,int(len(fl)/2+1))*1.0j)
+        fl_fourier_new = fl_fourier*random_phases
+        new_fl[i,:,m] = np.fft.irfft(fl_fourier_new)
+    print('calculated ifft for realization {}, all modes'.format(i))
+
 for i in range(n_realizations):
     flux_reconstr = generate_data(i, 6000, 1)
     flux_reconstr = (flux_reconstr*flux_clean_tstd)+flux_clean_tmean
     # melt_reconstr = flux_reconstr*sec_per_year/rho_fw
-    flux_reconstr = flux_reconstr.rename('flux_rec{}'.format(n_realizations))
+    # flux_reconstr = flux_reconstr.rename('flux_rec{}'.format(n_realizations))
     flux_reconstr.to_netcdf(main_dir / "data/interim/SORRMv2.1.ISMF/SORRM_6000_REC/flux_REC{}.nc".format(i))
     print('reconstructed realization # {}'.format(i))
