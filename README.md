@@ -1,5 +1,5 @@
-AISLENS Emulation
-==============================
+Antarctic Ice Sheet Large Ensemble (AISLENS) Emulation
+======================================================
 
 This project includes code/workflows for a statistical generator of spatiotemporal variability in forcings for ice sheet models. The generator, as applied to ocean model simulation output used to force an ice sheet model, has been described in detail in [[1]](#1).
 
